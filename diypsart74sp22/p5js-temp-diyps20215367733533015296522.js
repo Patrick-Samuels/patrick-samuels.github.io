@@ -51,8 +51,14 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '4') {
 //blue round chalk
     stroke(0, 200, 255);
-    ellipse(mouseX, mouseY, pmouseX, pmouseY);
-    rotate(PI/12.0);
+    fill(180);
+ ellipse(mouseX-31, mouseY-31, 5, 15);
+ ellipse(mouseX-25, mouseY-25, 5, 15);
+ strokeWeight(12);
+ line (mouseX-31, mouseY-31, mouseX-25, mouseY-25);
+
+ 
+    
   } else if (key == '5') { // this tool calls a function
     stroke(0, 0, 255);
     testbox(20, 20, 200);
