@@ -1,19 +1,20 @@
-var img;
+var img1;
+var img2;
 var initials ='ps'; // your initials
 var choice = '1'; // starting choice, so it is not empty
-var screenbg = 250; // off white background
+var screenbg = 225; // off white background
 var lastscreenshot=61; // last screenshot never taken
-var easing = 0.05;
 
 function preload() {
 // preload() runs once, it may make you wait
 //  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
 // you can link to an image on your github account
-  img = loadImage('https://dma-git.github.io/images/74.png');
+  img1 = loadImage('https://dma-git.github.io/images/74.png');
+    img2 = loadImage('https://patrick-samuels.github.io/diypsart74sp22/Nowar.jpg');
 }
 
 function setup() {
-createCanvas(600, 400);  // canvas size
+createCanvas(600, 600);  // canvas size
 background(screenbg);   // use our background screen color
 
 }
@@ -43,13 +44,15 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     stroke(20);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '3') { // third tool
-
-    stroke(300, 100, 0, 80);
+//yellow chalk
+    stroke(255, 255, 50, 80);
     line(mouseX, mouseY, pmouseX, pmouseY);
+    line(mouseX+5, mouseY+5, pmouseX, pmouseY);
   } else if (toolChoice == '4') {
-
-    stroke(0, 0, 255);
-    line(mouseX, mouseY, pmouseX, pmouseY);
+//blue round chalk
+    stroke(0, 200, 255);
+    ellipse(mouseX, mouseY, pmouseX, pmouseY);
+    rotate(PI/12.0);
   } else if (key == '5') { // this tool calls a function
     stroke(0, 0, 255);
     testbox(20, 20, 200);
@@ -70,23 +73,14 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 20, 20);
   } else if (toolChoice == '9') {
-
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 40, 40);
-  } else if (toolChoice == '0') var x; var y; var px; var py; var easing = 0.05; {
-    stroke(0, 102);var targetX = mouseX;
-x += (targetX - x) * easing;
-var targetY = mouseY;
-y += (targetY - y) * easing;
-var weight = dist(x, y, px, py);
-strokeWeight(weight);
-line(x, y, px, py);
-py = y;
-px = x;
-    fill(random(255), random(255), random(255), random(255));
-    rect(mouseX, mouseY, 200, 150);
+//brick wall
+ fill(300, 100, 0, 80);
+   rect(mouseX, mouseY, 80, 40);
+  } else if (toolChoice == '0')  {
+    // 0 replaces the rect with an image we pre-loaded
+    image(img2, mouseX-31, mouseY-31);
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
-    image(img, mouseX-30, mouseY-30);
+    image(img, mouseX, mouseY);
     
   }
  }
