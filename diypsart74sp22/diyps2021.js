@@ -1,5 +1,6 @@
 var img1;
 var img2;
+var img3;
 var initials ='ps'; // your initials
 var choice = '1'; // starting choice, so it is not empty
 var screenbg = 225; // off white background
@@ -11,7 +12,7 @@ function preload() {
 // you can link to an image on your github account
   img1 = loadImage('https://dma-git.github.io/images/74.png');
     img2 = loadImage('https://patrick-samuels.github.io/diypsart74sp22/Nowar.jpg');
-}
+      img3 = loadImage('https://patrick-samuels.github.io/diypsart74sp22/sunflower.jpg'}
 
 function setup() {
 createCanvas(600, 600);  // canvas size
@@ -35,8 +36,8 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // graphic function
 
  if (toolChoice == '1' ) {  // first tool
-   
-    stroke(01);
+   //pencil
+    stroke(180);
     line(mouseX, mouseY, pmouseX, pmouseY);
     
   } else if (toolChoice == '2') { // second tool
@@ -45,46 +46,56 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '3') { // third tool
 //yellow chalk
-    stroke(255, 255, 50, 80);
+    stroke(255, 215, 0, 80);
     line(mouseX, mouseY, pmouseX, pmouseY);
     line(mouseX+5, mouseY+5, pmouseX, pmouseY);
   } else if (toolChoice == '4') {
 //blue round chalk
-    stroke(0, 200, 255);
+    stroke(0, 87, 183,80);
     fill(180);
  ellipse(mouseX-31, mouseY-31, 5, 15);
  ellipse(mouseX-25, mouseY-25, 5, 15);
- strokeWeight(10);
+ strokeWeight(6);
  line (mouseX-31, mouseY-31, mouseX-25, mouseY-25);
 
  
     
   } else if (key == '5') { // this tool calls a function
-    stroke(0, 0, 255);
-    testbox(20, 20, 200);
-    testbox(200, 20, 20);
+    noStroke();
+    fill(255);
+    rect(mouseX, mouseY, 5,5)
+    //testbox(20, 20, 200);
+    //testbox(200, 20, 20);
     
  // make testbox do something!
  //   line(mouseX, mouseY, pmouseX, pmouseY);
+ //
   } else if (toolChoice == '6') {
+    //flag;
+    stroke(120);
+    fill(0, 87, 183);
+    rect(mouseX, 1/2*mouseY, mouseX+80, mouseY+30)
+    fill(255, 215, 0);
+    rect(mouseX, 30+mouseY, mouseX+80, mouseY+60);
 
-    stroke(200);
-    line(mouseX, mouseY, pmouseX, pmouseY);
   } else if (toolChoice == '7') {
-
-    fill(100, 200, 100);
-    rect(mouseX, mouseY, 20, 20);
+//sunflower
+    image(img3, mouseX, mouseY);
   } else if (toolChoice == '8') {
-
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 20, 20);
+//another brick in the wall
+    fill(300, 100, 0);
+     rect(mouseX, mouseY, 80, 40);
   } else if (toolChoice == '9') {
-//brick wall
- fill(300, 100, 0, 80);
+//brick set
+ fill(300, 100, 0);
    rect(mouseX, mouseY, 80, 40);
+   rect(mouseX+80, mouseY+40, 80, 40);
+   rect(mouseX+160, mouseY, 80, 40);
   } else if (toolChoice == '0')  {
     // 0 replaces the rect with an image we pre-loaded
     image(img2, mouseX-31, mouseY-31);
+    
+    
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
     image(img, mouseX, mouseY);
     

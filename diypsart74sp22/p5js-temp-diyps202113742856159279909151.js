@@ -1,5 +1,7 @@
 var img1;
 var img2;
+var img3;
+var img4;
 var initials ='ps'; // your initials
 var choice = '1'; // starting choice, so it is not empty
 var screenbg = 225; // off white background
@@ -11,8 +13,9 @@ function preload() {
 // you can link to an image on your github account
   img1 = loadImage('https://dma-git.github.io/images/74.png');
     img2 = loadImage('https://patrick-samuels.github.io/diypsart74sp22/Nowar.jpg');
+      img3 = loadImage('https://patrick-samuels.github.io/diypsart74sp22/sunflower.jpg');
+        img4 = loadImage('https://patrick-samuels.github.io/diypsart74sp22/peace.jpg');
 }
-
 function setup() {
 createCanvas(600, 600);  // canvas size
 background(screenbg);   // use our background screen color
@@ -35,9 +38,8 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // graphic function
 
  if (toolChoice == '1' ) {  // first tool
-   //pencil
-    stroke(180);
-    line(mouseX, mouseY, pmouseX, pmouseY);
+   //peace graff
+    image(img3, mouseX-40, mouseY-40);
     
   } else if (toolChoice == '2') { // second tool
 
@@ -50,11 +52,11 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     line(mouseX+5, mouseY+5, pmouseX, pmouseY);
   } else if (toolChoice == '4') {
 //blue round chalk
-    stroke(0, 87, 183);
+    stroke(0, 87, 183,80);
     fill(180);
  ellipse(mouseX-31, mouseY-31, 5, 15);
  ellipse(mouseX-25, mouseY-25, 5, 15);
- strokeWeight(10);
+ strokeWeight(6);
  line (mouseX-31, mouseY-31, mouseX-25, mouseY-25);
 
  
@@ -78,15 +80,14 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     rect(mouseX, 30+mouseY, mouseX+80, mouseY+60);
 
   } else if (toolChoice == '7') {
-
-    fill(100, 200, 100);
-    rect(mouseX, mouseY, 20, 20);
+//sunflower
+    image(img3, mouseX, mouseY);
   } else if (toolChoice == '8') {
-
-    fill(300, 100, 0);
-    rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '9') {
 //another brick in the wall
+    fill(300, 100, 0);
+     rect(mouseX, mouseY, 80, 40);
+  } else if (toolChoice == '9') {
+//brick set
  fill(300, 100, 0);
    rect(mouseX, mouseY, 80, 40);
    rect(mouseX+80, mouseY+40, 80, 40);
