@@ -21,8 +21,7 @@ function preload() {
 
 function setup() {
 createCanvas(600, 600);  // canvas size
-background(screenbg);   // use our background screen color
-
+background(screenbg);   // use background color
 }
 
 function draw() {
@@ -30,9 +29,11 @@ function draw() {
     choice = key; // set choice to the key that was pressed
     clear_print(); // check to see if it is clear screen or save image
   }
+  
   if (mouseIsPressed){
     newkeyChoice(choice);  // if the mouse is pressed call newkeyChoice
   }
+  
 }
 
 function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
@@ -40,7 +41,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // just make sure each key option has the a stroke or fill and then what type of 
   // graphic function
   
-  if (toolChoice == '1' ) {
+  if (toolChoice == '1') {
       // classic eraser tool
         noStroke();
         fill(255);
