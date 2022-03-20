@@ -40,15 +40,15 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // just make sure each key option has the a stroke or fill and then what type of 
   // graphic function
   
-  } 
   if (toolChoice == '1' ) {
-    image(img5, mouseX+50, mouseY+50);
+      // classic eraser tool
+        noStroke();
+        fill(255);
  }
  
   else if (toolChoice == '2') { 
-    // classic eraser tool
-        noStroke();
-        fill(255);
+  stroke(6);
+    image(img5, mouseX, mouseY);
   } 
   
   else if (toolChoice == '3') { // third tool
@@ -116,7 +116,8 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
     image(img, mouseX, mouseY);
  }
- 
+}
+
 function testbox(r, g, b) {
 // this is a test function that will show you how you can put your own functions into the sketch
   x = mouseX;
