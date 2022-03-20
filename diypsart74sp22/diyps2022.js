@@ -50,7 +50,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
  
   else if (toolChoice == '2') { 
   stroke(6);
-    image(img5, mouseX, mouseY);
+    image(img5, mouseX-50, mouseY-50);
   } 
   
   else if (toolChoice == '3') { // third tool
@@ -65,7 +65,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     stroke(0, 87, 183,80);
     fill(180);
     strokeWeight(6);
- ellipse(mouseX-31, mouseY-31, 5, 15);
+ ellipse(mouseX, mouseY, 5, 15);
  rotate(mouseX / 100.0);    
   }     
   
@@ -87,14 +87,6 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
 //sunflower
     image(img3, mouseX, mouseY);
   } 
-    
-  else if (toolChoice == '8') {
-//3-brick set
- fill(300, 100, 0);
-   rect(mouseX, mouseY, 80, 40);
-   rect(mouseX+80, mouseY+40, 80, 40);
-   rect(mouseX+160, mouseY, 80, 40);
-  } 
   
   else if (toolChoice == '8') {
 //another brick in the wall
@@ -112,7 +104,7 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   
   else if (toolChoice == '0')  {
     // 0 replaces the rect with an image we pre-loaded
-    image(img2, mouseX-31, mouseY-31);  
+    image(img2, mouseX-100, mouseY-100);  
   } 
   
   else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
