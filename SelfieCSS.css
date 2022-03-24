@@ -1,0 +1,9 @@
+@charset "UTF-8";
+body {background-color: lightslategrey;
+	padding:25px;
+	
+#container {
+    width: 600px;
+    /* Change this value to customize the content area*/
+    margin: 0 auto;
+}}
