@@ -23,7 +23,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 		<li class="nav-item">
-        <a class="nav-link disabled" href="https://patrick-samuels.github.io/ritz.html">Ritz (Current)</a>
+        <a class="nav-link disabled" href="https://patrick-samuels.github.io/ritz.html">Zine (Current)</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="https://patrick-samuels.github.io/index.html">Home <span class="sr-only"></span></a>
@@ -41,7 +41,7 @@
 		   <a class="nav-link" href="https://patrick-samuels.github.io/drawbox.html">Drawbox <span class="sr-only"></span></a>
       </li>
   <li class="nav-item">
-		   <a class="nav-link" href="https://patrick-samuels.github.io/zine.html">Zine <span class="sr-only"></span></a>
+		   <a class="nav-link" href="https://patrick-samuels.github.io/ritz.html">Ritz <span class="sr-only"></span></a>
       </li>
       
     </ul>
@@ -50,14 +50,15 @@
 
 	
     <div class="jumbotron jumbotron-fluid text-center">
-       <h1 class="display-4">Upon the ritz</h1>
-       <p class="lead">A game made in p5.js</p>
-       <hr class="my-4">
-       <p>Chase the cracker with Putin's head&nbsp;</p>
+       <h1 class="display-4">Urban Decay</h1>
+       <p class="lead">A zine made with glitched images of urban decay&nbsp;</p>
+       <p class="lead">found in and around the San José State Campus</p>
+<hr class="my-4">
+       <p>All images are of found objects near or on SJSU's campus</p>
 </div>
     <div class="container">
        <div class="row text-center">
-          <div class="col-lg-6 offset-lg-3"> To draw, begin by clicking in the box <strong>below</strong> "On the ritz" </div>
+          <div class="col-lg-6 offset-lg-3"> Scroll through, starting with page 1 </div>
        </div>
        <br>
        <hr>
@@ -67,126 +68,10 @@
              <div class="card">
 				 <div class="card-body">
 					 <h4 class="Card-title">On the ritz - chase game</h4>
-                <iframe src="https://patrick-samuels.github.io/putinOnRitz/index.html" height="600" width="600" title="Drawbox"></iframe>
+                <iframe src="https://patrick-samuels.github.io/images/zine.pdf" height="600" width="600" title="Drawbox"></iframe>
 				 </div>
-               </div>
-             </div> 
-		   
-		</div>
-		<div class="row">
-		<div class="col-md-12">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title"> The code:</h4>
-					<p class="card-text"><pre> 
-//Chase The Ball Game
-var ballx = 300;
-var bally = 300;
-var ballsize = 40;
-var score = 0;
-var img1;
-var img2;
-var img3;
-var img4;
-var cursorimg;
-var gamestate = "L1";
-
-function preload() {
-   img1 = loadImage('https://patrick-samuels.github.io/images/gamebackground.png');
-  img2 = loadImage('https://patrick-samuels.github.io/images/Cracker.png');
-  img3 = loadImage('https://patrick-samuels.github.io/images/Flag.png');
-  img4 = loadImage('https://patrick-samuels.github.io/images/PutinOnRitz.png');
-
-    cursorimg = loadImage('https://patrick-samuels.github.io/images/vladimir.png');
-
-}
-
-function setup() {
-  createCanvas(600, 600);
-}
-
-function draw() {
-  
-if(gamestate == "L1"){
-  levelOne();
-}
-  if(gamestate == "L2"){
-  levelTwo();
-
-  }
-  if(gamestate == "L3"){
-  YOU_WIN();
-  }
-    cursor('https://patrick-samuels.github.io/images/vladimir.png');
-
-}
-
-function levelOne(){
-  background(img1);
-    cursor('https://patrick-samuels.github.io/images/vladimir.png');
-  fill(255);
-  stroke(0);
-  strokeWeight(1);
-  textAlign(CENTER);
-  
-  let distToBall = dist(ballx,bally, mouseX,mouseY);
-  if (distToBall < ballsize/2){
-  ballx = random(width);
-    bally = random(height);
-    score = score+1
-  }
-  if (score >= 5){
-  gamestate="L2";
-  
-  }
-  stroke (255);
-  line(ballx,bally, mouseX+15,mouseY+15);
-  image(img2, ballx-20, bally-5);
-  text(("Score: "+score),width/2,40);
-text("Level 1", width/2,height-20);
-textSize(20);
-
-}  //end of level 1
-
-function levelTwo(){
-  background(img3);
-  fill(80,10,200);
-  
-  let distToBall = dist(ballx,bally, mouseX,mouseY);
-  if (distToBall < ballsize/2){
-  ballx = random(width);
-    bally = random(height);
-    score = score+1
-  }
-  if (score >= 10){
-  gamestate="L3";
-  
-  }
-image(img2, ballx, bally);
-line(ballx, bally, mouseX+30, mouseY+15);
-  stroke(255);
-  strokeWeight(1);
-  textAlign(CENTER);
-  text(("Score: "+score),width/2,40);
-text("Last Level ", width/2,height-20);
-textSize(20);
-}
-function YOU_WIN(){
-  noStroke();
-background (img4);
-  fill(random(255));
-  text("WINNER!",width/2,height/2);
-  textSize(50);
-}
-</pre>
-	</p></p>
-				
-					</div>
-				</div>
-               </div>
-             </div>
-		   </div>
-              
+            </div>
+         </div> 
              </div>
           </div>
           </div>
